@@ -22,4 +22,10 @@ describe('Testes da função HandlerElephants', () => {
   test('Quando não passado um parametro retorna undefined', () => {
     expect(handlerElephants()).toBeUndefined();
   });
+  test('Quando passado um argumento vazio deve retornar a string Parâmetro inválido, é necessário uma string', () => {
+    expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string');
+  });
+  test('Passada uma string que não contempla uma funcionalidade deve retornar null', () => {
+    expect(handlerElephants('oi')).toBeNull();
+  });
 });
